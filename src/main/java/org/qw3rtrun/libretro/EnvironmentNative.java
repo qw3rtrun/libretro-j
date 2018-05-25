@@ -1,7 +1,10 @@
 package org.qw3rtrun.libretro;
 
+import java.nio.ByteBuffer;
 import java.util.Collection;
 import java.util.List;
+import java.util.Objects;
+import java.util.Optional;
 
 public class EnvironmentNative implements Environment {
 
@@ -9,42 +12,36 @@ public class EnvironmentNative implements Environment {
     public native Variable getVariable(String key);
 
     @Override
-    public void setVariable(Variable variable) {
-
-    }
+    public native void setVariables(Collection<Variable> variables);
 
     @Override
-    public void setVariables(Collection<Variable> variables) {
+    public native boolean isVariablesUpdated();
 
-    }
-
-    @Override
-    public boolean isVariablesUpdated() {
-        return false;
-    }
 
     @Override
-    public void setSupportNoGame(boolean isSupportNoGame) {
-
-    }
+    public native LogCallback getLogInterface() ;
 
     @Override
-    public LogCallback getLogInterface() {
-        return null;
-    }
+    public native void setControllerInfo(List<PortInfo> info);
 
     @Override
-    public void setSubsystemInfo(Collection<SubsystemInfo> types) {
-
+    public Optional<ByteBuffer> getCurrentSoftwareFrameBuffer() {
+        return Optional.ofNullable(getCurrentSoftwareFrameBuffer0());
     }
+
+    private native ByteBuffer getCurrentSoftwareFrameBuffer0();
 
     @Override
-    public void setControllerInfo(List<PortInfo> info) {
-
+    public boolean setPixelFormat(PixelFormat pixelFormat) {
+        Objects.requireNonNull(pixelFormat);
+        return setPixelFormat0(pixelFormat.getCode());
     }
+
+    private native boolean setPixelFormat0(int code);
 
     @Override
-    public void call(int cmd, Object data) {
+    public native void setInputDescriptors(List<InputDescriptor> descriptors);
 
-    }
+    @Override
+    public native void setKeyboardCallback(KeyboardCallback callback);
 }
