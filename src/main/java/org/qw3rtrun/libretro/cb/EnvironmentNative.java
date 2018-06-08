@@ -1,4 +1,9 @@
-package org.qw3rtrun.libretro;
+package org.qw3rtrun.libretro.cb;
+
+import org.qw3rtrun.libretro.struct.InputDescriptor;
+import org.qw3rtrun.libretro.struct.PixelFormat;
+import org.qw3rtrun.libretro.struct.PortInfo;
+import org.qw3rtrun.libretro.struct.Variable;
 
 import java.nio.ByteBuffer;
 import java.util.Collection;
@@ -17,9 +22,8 @@ public class EnvironmentNative implements Environment {
     @Override
     public native boolean isVariablesUpdated();
 
-
     @Override
-    public native LogCallback getLogInterface() ;
+    public native LogCallback getLogInterface();
 
     @Override
     public native void setControllerInfo(List<PortInfo> info);

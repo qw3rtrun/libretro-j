@@ -1,4 +1,4 @@
-package org.qw3rtrun.libretro;
+package org.qw3rtrun.libretro.struct;
 
 import java.nio.ByteBuffer;
 import java.util.Objects;

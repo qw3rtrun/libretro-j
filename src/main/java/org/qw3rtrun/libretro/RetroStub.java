@@ -1,4 +1,9 @@
-import org.qw3rtrun.libretro.*;
+package org.qw3rtrun.libretro;
+
+import org.qw3rtrun.libretro.cb.*;
+import org.qw3rtrun.libretro.struct.GameInfo;
+import org.qw3rtrun.libretro.struct.SystemAVInfo;
+import org.qw3rtrun.libretro.struct.SystemInfo;
 
 import java.nio.ByteBuffer;
 import java.util.Collection;

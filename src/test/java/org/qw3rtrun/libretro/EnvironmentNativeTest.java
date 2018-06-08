@@ -1,8 +1,11 @@
 package org.qw3rtrun.libretro;
 
 
-import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
+import org.qw3rtrun.libretro.cb.Environment;
+import org.qw3rtrun.libretro.cb.EnvironmentNative;
+import org.qw3rtrun.libretro.struct.Variable;
 
 import java.nio.ByteBuffer;
 import java.util.Arrays;
@@ -13,6 +16,7 @@ import static org.junit.Assert.assertNotNull;
 public class EnvironmentNativeTest {
 
     @Test
+    @Ignore
     public void test() {
         System.loadLibrary("libretrojc");
         Environment env = new EnvironmentNative();

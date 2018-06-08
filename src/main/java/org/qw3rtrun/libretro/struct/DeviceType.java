@@ -1,4 +1,4 @@
-package org.qw3rtrun.libretro;
+package org.qw3rtrun.libretro.struct;
 
 public enum DeviceType {
     none(0),

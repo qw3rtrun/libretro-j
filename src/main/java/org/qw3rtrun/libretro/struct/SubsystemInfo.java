@@ -1,6 +1,5 @@
-package org.qw3rtrun.libretro;
+package org.qw3rtrun.libretro.struct;
 
-import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
 

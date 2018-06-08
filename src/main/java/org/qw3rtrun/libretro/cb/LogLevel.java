@@ -1,4 +1,4 @@
-package org.qw3rtrun.libretro;
+package org.qw3rtrun.libretro.cb;
 
 public enum LogLevel {
     DEBUG(0),

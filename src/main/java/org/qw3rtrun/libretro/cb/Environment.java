@@ -1,5 +1,10 @@
-package org.qw3rtrun.libretro;
+package org.qw3rtrun.libretro.cb;
 
+
+import org.qw3rtrun.libretro.struct.InputDescriptor;
+import org.qw3rtrun.libretro.struct.PixelFormat;
+import org.qw3rtrun.libretro.struct.PortInfo;
+import org.qw3rtrun.libretro.struct.Variable;
 
 import java.nio.ByteBuffer;
 import java.util.*;
