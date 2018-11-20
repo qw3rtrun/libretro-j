@@ -1,4 +1,4 @@
-package org.qw3rtrun.libretro;
+package org.qw3rtrun.libretro.stub;
 
 import org.qw3rtrun.libretro.api.FrameBuffer;
 import org.qw3rtrun.libretro.api.RetroInitializer;
@@ -6,9 +6,9 @@ import org.qw3rtrun.libretro.api.RunContext;
 import org.qw3rtrun.libretro.api.builder.RetroConfigurer;
 import org.qw3rtrun.libretro.api.pixel.ORGB1555;
 import org.qw3rtrun.libretro.api.pixel.Pixel;
-import org.qw3rtrun.libretro.struct.GameGeometry;
-import org.qw3rtrun.libretro.struct.SystemAVInfo;
-import org.qw3rtrun.libretro.struct.SystemTiming;
+import org.qw3rtrun.libretro.api.struct.GameGeometry;
+import org.qw3rtrun.libretro.api.struct.SystemAVInfo;
+import org.qw3rtrun.libretro.api.struct.SystemTiming;
 
 import java.util.ArrayList;
 import java.util.List;

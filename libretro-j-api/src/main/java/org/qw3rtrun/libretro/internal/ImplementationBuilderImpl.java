@@ -1,13 +1,14 @@
 package org.qw3rtrun.libretro.internal;
 
 import org.qw3rtrun.libretro.api.FrameBuffer;
+import org.qw3rtrun.libretro.api.Implementation;
 import org.qw3rtrun.libretro.api.InitContext;
 import org.qw3rtrun.libretro.api.RunContext;
 import org.qw3rtrun.libretro.api.builder.RetroConfigurer;
 import org.qw3rtrun.libretro.api.pixel.ORGB1555;
 import org.qw3rtrun.libretro.api.pixel.PixelFormat;
 import org.qw3rtrun.libretro.cb.Environment;
-import org.qw3rtrun.libretro.struct.SystemAVInfo;
+import org.qw3rtrun.libretro.api.struct.SystemAVInfo;
 
 import java.util.function.Consumer;
 import java.util.function.Function;
@@ -53,7 +54,7 @@ public class ImplementationBuilderImpl implements RetroConfigurer, Implementatio
 
     @Override
     public Implementation build() {
-        return new Implementation(info, pixelFormat, defaultRunner, runner, initializer);
+        return new ImplementationImpl(info, pixelFormat, defaultRunner, runner, initializer);
     }
 
 }

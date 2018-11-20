@@ -4,7 +4,7 @@ import org.qw3rtrun.libretro.api.FrameBuffer;
 import org.qw3rtrun.libretro.api.pixel.ORGB1555;
 import org.qw3rtrun.libretro.api.pixel.PixelFormat;
 import org.qw3rtrun.libretro.cb.Environment;
-import org.qw3rtrun.libretro.struct.SystemAVInfo;
+import org.qw3rtrun.libretro.api.struct.SystemAVInfo;
 
 import java.util.function.Consumer;
 

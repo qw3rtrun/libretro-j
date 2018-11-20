@@ -1,4 +1,4 @@
-package org.qw3rtrun.libretro.struct;
+package org.qw3rtrun.libretro.api.struct;
 
 import java.util.Objects;
 
