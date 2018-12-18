@@ -1,7 +1,5 @@
-package test.java.org.qw3rtrun.libretro.api.pixel;
+package org.qw3rtrun.libretro.api.pixel;
 
-import org.qw3rtrun.libretro.api.pixel.ORGB1555;
-import org.qw3rtrun.libretro.api.pixel.Pixel;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
@@ -53,8 +51,8 @@ class ORGB1555Test {
     @Test
     void testInstances() {
         Pixel<ORGB1555> p1 = f.grey();
-        Pixel<ORGB1555> p2 = new ORGB1555().grey();
         Pixel<ORGB1555> p3 = new ORGB1555().white();
+        Pixel<ORGB1555> p2 = new ORGB1555().grey();
         assertEquals(p1, p2);
         assertNotEquals(p2, p3);
         assertNotEquals(p1, p3);
@@ -63,7 +61,7 @@ class ORGB1555Test {
     @ParameterizedTest
     @MethodSource("colors")
     void testSelfConvert(float red, float green, float blue) {
-        Pixel<ORGB1555> p = f.pixel(red,green,blue);
+        Pixel<ORGB1555> p = f.pixel(red, green, blue);
         assertEquals(p, f.convert(p));
     }
 }

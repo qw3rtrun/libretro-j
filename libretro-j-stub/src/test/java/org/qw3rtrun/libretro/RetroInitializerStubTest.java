@@ -1,7 +1,7 @@
 package org.qw3rtrun.libretro;
 
 import org.junit.jupiter.api.Test;
-import org.qw3rtrun.libretro.api.Implementation;
+import org.qw3rtrun.libretro.api.GameImplementation;
 import org.qw3rtrun.libretro.internal.ImplementationBuilder;
 import org.qw3rtrun.libretro.internal.ImplementationBuilderImpl;
 import org.qw3rtrun.libretro.stub.RetroInitializerStub;
@@ -15,7 +15,7 @@ class RetroInitializerStubTest {
         RetroInitializerStub retroStub = new RetroInitializerStub();
         ImplementationBuilder builder = new ImplementationBuilderImpl();
         retroStub.setupRetro(builder);
-        Implementation impl = builder.build();
+        GameImplementation impl = builder.build();
 
         impl.load(null);
 

@@ -1,7 +1,7 @@
 package org.qw3rtrun.libretro.internal;
 
 import org.qw3rtrun.libretro.api.FrameBuffer;
-import org.qw3rtrun.libretro.api.Implementation;
+import org.qw3rtrun.libretro.api.GameImplementation;
 import org.qw3rtrun.libretro.api.InitContext;
 import org.qw3rtrun.libretro.api.RunContext;
 import org.qw3rtrun.libretro.api.builder.RetroConfigurer;
@@ -53,8 +53,8 @@ public class ImplementationBuilderImpl implements RetroConfigurer, Implementatio
     }
 
     @Override
-    public Implementation build() {
-        return new ImplementationImpl(info, pixelFormat, defaultRunner, runner, initializer);
+    public GameImplementation build() {
+        return new GameImplementationImpl(info, pixelFormat, defaultRunner, runner, initializer);
     }
 
 }

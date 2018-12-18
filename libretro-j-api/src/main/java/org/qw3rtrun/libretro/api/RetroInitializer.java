@@ -4,5 +4,5 @@ import org.qw3rtrun.libretro.api.builder.RetroConfigurer;
 
 public interface RetroInitializer {
 
-    Implementation setupRetro(RetroConfigurer config);
+    GameImplementation setupRetro(RetroConfigurer config);
 }

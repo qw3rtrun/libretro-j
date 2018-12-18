@@ -111,4 +111,12 @@ public class FrameBuffer<T extends PixelFormat> {
     public ByteBuffer getDirectByteBuffer() {
         return buffer;
     }
+
+    public int getWidth() {
+        return width;
+    }
+
+    public int getHeight() {
+        return height;
+    }
 }

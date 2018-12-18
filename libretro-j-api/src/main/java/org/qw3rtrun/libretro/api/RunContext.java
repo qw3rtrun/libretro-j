@@ -1,4 +1,8 @@
 package org.qw3rtrun.libretro.api;
 
-public interface RunContext {
+import org.qw3rtrun.libretro.api.pixel.PixelFormat;
+
+public interface RunContext<T extends PixelFormat> {
+
+    void pushFrameBuffer(FrameBuffer<T> fb);
 }
