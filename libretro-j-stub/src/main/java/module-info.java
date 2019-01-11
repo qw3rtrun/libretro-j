@@ -1,10 +1,10 @@
-import org.qw3rtrun.libretro.api.RetroInitializer;
-import org.qw3rtrun.libretro.stub.RetroInitializerStub;
+import org.qw3rtrun.libretro.api.GameImplementation;
+import org.qw3rtrun.libretro.stub.StubGame;
 
 module org.qw3rtrun.libretro.stub {
     requires org.qw3rtrun.libretro.api;
 
     exports org.qw3rtrun.libretro.stub;
 
-    provides RetroInitializer with RetroInitializerStub;
+    provides GameImplementation with StubGame;
 }

@@ -26,12 +26,7 @@
 package org.qw3rtrun.libreto;
 
 import org.openjdk.jmh.annotations.*;
-import org.qw3rtrun.libretro.internal.ImplementationBuilder;
-import org.qw3rtrun.libretro.internal.ImplementationBuilderImpl;
-import org.qw3rtrun.libretro.stub.LinesStub;
-import org.qw3rtrun.libretro.stub.RetroInitializerStub;
 import org.qw3rtrun.libretro.api.FrameBuffer;
-import org.qw3rtrun.libretro.api.builder.Implementation;
 import org.qw3rtrun.libretro.api.pixel.ORGB1555;
 import org.qw3rtrun.libretro.api.pixel.Pixel;
 
@@ -45,8 +40,6 @@ public class FrameBufferBenchmark {
     @State(Scope.Benchmark)
     public static class Context {
 
-        Implementation<ORGB1555> simple;
-        Implementation<ORGB1555> parallel;
         ByteBuffer buf;
         ORGB1555 format;
         Pixel<ORGB1555> pixel;
@@ -54,10 +47,6 @@ public class FrameBufferBenchmark {
 
         @Setup(Level.Trial)
         public void setUp() {
-            ImplementationBuilder builder = new ImplementationBuilderImpl();
-            simple = new RetroInitializerStub().setupRetro();
-            ImplementationBuilder builder = new ImplementationBuilderImpl();
-            parallel = new LinesStub().setupRetro();
             buf = ByteBuffer.allocateDirect(2 * 1280 * 720);
             format = new ORGB1555();
             pixel = format.red();
@@ -72,14 +61,12 @@ public class FrameBufferBenchmark {
 
     //@Benchmark
     public void simple(Context ctx) {
-        ctx.simple.run(ctx.buf);
+        /*ctx.simple.run(ctx.buf);*/
     }
 
     @Benchmark
     public void parallel(Context ctx) {
-        ctx.parallel.run(ctx.buf);
+        /*ctx.parallel.run(ctx.buf);*/
     }
-
-
 
 }

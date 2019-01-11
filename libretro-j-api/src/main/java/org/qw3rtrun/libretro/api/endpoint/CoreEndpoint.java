@@ -20,6 +20,7 @@ public class CoreEndpoint {
 
     private LogCallback log;
     private GameImplementation impl;
+    private RunContext runContext;
 
     public CoreEndpoint(Environment env, VideoRefreshCallback video,
                         AudioSampleCallback audio, AudioSampleBatchCallback audioBatch) {
@@ -27,14 +28,23 @@ public class CoreEndpoint {
         this.video = Objects.requireNonNull(video);
         this.audio = audio;
         this.audioBatch = audioBatch;
+        this.runContext = new RunContextImpl();
     }
 
     public CoreEndpoint() {
         this(new EnvironmentNative(), new VideoRefreshCallbackNative(), null, null);
     }
 
-    public void load() {
+    public boolean load() {
         populateLog(env);
+        GameImplementation i = GameImplementation.lookup();
+        if (i == null) {
+            log.log(LogLevel.ERROR, "GameImplementation not found");
+            return false;
+        } else {
+            this.impl = i;
+            return true;
+        }
     }
 
     public void unload() {
@@ -42,13 +52,13 @@ public class CoreEndpoint {
     }
 
     public void run() {
-        impl.run()
+        impl.run(runContext);
     }
 
     private void populateLog(Environment env) {
         LogCallback logInterface = env.getLogInterface();
         if (logInterface == null) {
-            logInterface = (level, msg) -> System.err.printf("%s: %s", level, msg);
+            logInterface = (level, msg) -> System.err.printf("%s: %s\n", level, msg);
             logInterface.log(LogLevel.WARN, "Environment does not provide log interface");
         }
         this.log = logInterface;
